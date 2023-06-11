@@ -1,0 +1,77 @@
+<div class="post">
+    <h2 class="post-title">Introdução ao EJS</h2>
+    <p class="post-meta">Publicado em 11 de Junho, 2023</p>
+    <div class="post-content">
+        <p>O EJS (Embedded JavaScript) é uma linguagem de template simples que permite incorporar código
+            JavaScript
+            nas
+            páginas HTML. Ele é amplamente utilizado em aplicações web para renderizar dinamicamente o conteúdo.
+        </p>
+        <p>Com o EJS, você pode criar facilmente templates reutilizáveis e injetar dados dinamicamente em seus
+            arquivos
+            HTML. Ele oferece recursos como loops, condicionais e inclusão de arquivos parciais, o que torna
+            mais
+            fácil a
+            criação de interfaces interativas.</p>
+        <p>Para utilizar o EJS, basta instalar a biblioteca via npm e, em seguida, incorporar os templates EJS
+            em suas
+            rotas no servidor.</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-title">Usando EJS com Node.js</h2>
+    <p class="post-meta">Publicado em 13 de Junho, 2023</p>
+    <div class="post-content">
+        <p>Para usar o EJS em uma aplicação Node.js, primeiro você precisa instalar o pacote do EJS. Abra o
+            terminal e
+            navegue até o diretório do seu projeto, em seguida, execute o seguinte comando:</p>
+        <pre><code>npm install ejs</code></pre>
+        <p>Depois de instalar o EJS, você pode configurar sua aplicação Node.js para usar o EJS como mecanismo
+            de
+            visualização. Você precisará definir a pasta de views (onde seus arquivos EJS estão localizados) e
+            dizer ao
+            Express para usar o EJS. Aqui está um exemplo:</p>
+        <pre><code>const express = require('express');
+const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
+app.get('/', (req, res) => {
+res.render('index', { title: 'Meu Blog', message: 'Bem-vindo ao meu blog sobre EJS!' });
+});
+
+app.listen(3000, () => {
+console.log('Servidor iniciado na porta 3000');
+});</code></pre>
+        <p>No exemplo acima, definimos o EJS como mecanismo de visualização e a pasta de views como './views'.
+            Em seguida,
+            temos uma rota principal que renderiza o arquivo 'index.ejs' passando alguns dados para o template.
+        </p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-title">Recursos avançados do EJS</h2>
+    <p class="post-meta">Publicado em 15 de Junho, 2023</p>
+    <div class="post-content">
+        <p>O EJS oferece recursos avançados para tornar a criação de interfaces mais poderosa e flexível. Alguns
+            desses
+            recursos incluem:</p>
+        <ul>
+            <li>Loops: você pode usar a estrutura de controle de loop do JavaScript para iterar sobre uma lista
+                de
+                elementos e renderizar dinamicamente o conteúdo.</li>
+            <li>Condicionais: você pode usar instruções if/else no EJS para exibir diferentes conteúdos com base
+                em
+                condições específicas.</li>
+            <li>Partials: você pode criar arquivos parciais reutilizáveis e incluí-los em vários templates para
+                evitar
+                repetição de código.</li>
+        </ul>
+        <p>Esses recursos avançados do EJS ajudam a criar interfaces dinâmicas e personalizadas para suas
+            aplicações
+            web.</p>
+    </div>
+</div>
